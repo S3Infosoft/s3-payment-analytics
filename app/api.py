@@ -95,7 +95,7 @@ festivals=pd.DataFrame({
 'Valmiki Jayanti',
 'Karva Chauth',
 'Dhanteras',
-'Diwali, Narak Chaturdashi, Children’s day',
+"Diwali, Narak Chaturdashi, Children's day",
 'Govardhan Puja',
 'Bhai Dooj',
 'Chhath Puja',
@@ -212,7 +212,7 @@ holidays['ds']=pd.to_datetime(festivals['ds'])
 
 
 
-file=r'E:\Forecast_Api\forecasting-prj-sample-data-v0.1.csv'
+file=r'./forecasting-prj-sample-data-v0.1.csv'
 df=pd.read_csv(file)
 df.to_html(header="true",table_id="table")
 
@@ -361,4 +361,4 @@ def show_prophetchild():
 
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0",debug=True)

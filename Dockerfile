@@ -1,14 +1,16 @@
-FROM python:3.7-alpine
-MAINTAINER S3-Infosoft
+FROM ubuntu:18.04
 
-COPY ./requirements.txt /requirements.txt
-RUN pip install -r requirements.txt
+RUN apt-get update -y && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y gcc python3-pip python3-dev python3-tk
 
 RUN mkdir /app
 WORKDIR /app
 COPY ./app /app
+COPY ./requirements.txt /app
 
-EXPOSE 5000
-ENTRYPOINT [ "python" ]
+RUN pip3 install -r requirements.txt
+
+ENTRYPOINT [ "python3" ]
 
 CMD [ "api.py" ]
+

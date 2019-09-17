@@ -2,4 +2,6 @@ flask
 pandas
 matplotlib
 numpy
+pystan
 fbprophet
+
